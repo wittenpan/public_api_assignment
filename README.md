@@ -48,6 +48,8 @@ PORT=3000
 
 4. node index.js
 
+---
+
 ## API Endpoints
 
 1. GET /todos
@@ -58,3 +60,13 @@ PORT=3000
    Update the id-specified item.
 4. DELETE /todos/:id
    Delete the id-specified item.
+
+---
+
+## Testing Frameworks/Tools
+
+1. Jest was used for testing coverage, with a unit test file, integration test file, and api test file.
+2. Supertest was used for API testing.
+3. Here is the test screenshot:
+
+![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/wittenpan/Desktop/Screenshot%202025-06-23%20at%209.34.00%E2%80%AFPM.png?version%3D1750736682123)

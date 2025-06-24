@@ -1,9 +1,13 @@
-const { createClient } = require("@supabase/supabase-js");
-require("dotenv").config();
+let supabase = null;
+function getSupabaseClient() {
+  if (supabase) return supabase;
+  const { createClient } = require("@supabase/supabase-js");
+  require("dotenv").config();
+  supabase = createClient(
+    "https://kxjzbdzftfgiifuibyfz.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4anpiZHpmdGZnaWlmdWlieWZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NjQ1MTYsImV4cCI6MjA2NjA0MDUxNn0.oTYjcqxiLvdIXB812f7cGs9CNaQ1agiRAWi6Lg51b9E"
+  );
+  return supabase;
+}
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
-
-module.exports = supabase;
+module.exports = getSupabaseClient();
